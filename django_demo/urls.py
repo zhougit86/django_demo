@@ -20,6 +20,7 @@ from view import *
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^hello/$',hello),
     url(r'^hello/([a-zA-Z]+)/$',hello),
+    url(r'^hello2/([a-zA-Z]+)/$',hello_template),
+    url(r'^hello3/([a-zA-Z]+)/$',hello_shortcut),
 ]
