@@ -17,10 +17,13 @@ from django.conf.urls import url
 from django.contrib import admin
 
 from view import *
+from guys import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^hello/([a-zA-Z]+)/$',hello),
-    url(r'^hello2/([a-zA-Z]+)/$',hello_template),
-    url(r'^hello3/([a-zA-Z]+)/$',hello_shortcut),
+    url(r'^$',http_metric),
+    url(r'^guys/newguy/$',views.new_guy),
+    url(r'^guys/$',views.guys),
+    url(r'^guys1/newguy/$', views.new_guy1),
+    url(r'^guys1/$', views.guys1),
 ]
