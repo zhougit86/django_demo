@@ -16,11 +16,9 @@ def new_guy(request):
     form.is_valid()
     cd = form.cleaned_data
     guy = Guy(name=cd['name'], age=cd['age'], email=cd['email'], phone=cd['phone'], gender=cd['gender'])
+    guy.save()
     return redirect("guys")
 
-
-
-
 def guys(request):
-
-    return HttpResponse("save")
+    guys_list = Guy.objects.all()
+    return render(request, 'guys/guys.html', {'guys': guys_list})
