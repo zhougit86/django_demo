@@ -11,42 +11,44 @@ LCTC personal info
         <div class="row">
             <div class="col-md-6 col-md-offset-3 jumbotron">
                 <div class="text-center">
-                    <form class="form-horizontal" action="/guys1/" method="get">
-                        <!--<table>-->
-                            <!--{{ form.as_table }}-->
-                        <!--</table>-->
-                        <fieldset>
-                            <div class="control-group">
-                                <label class="control-label" for="id_name">name</label>
-                                <div class="controls">
-                                {{form.name}}
-                                    </div>
-                            </div>
-                            <div class="control-group">
-                                <label class="control-label" for="id_age">age</label>
-                                <div class="controls">
-                                {{form.age}}
-                                    </div>
-                            </div>
-                            <div class="control-group">
-                                <label class="control-label" for="id_email">email</label>
-                                <div class="controls">
-                                {{form.email}}
-                                    </div>
-                            </div>
-                            <div class="control-group">
-                                <label class="control-label" for="id_phone">phone</label>
-                                <div class="controls">
-                                {{form.phone}}
-                                    </div>
-                            </div>
-                            <div class="control-group">
-                                <label class="control-label" for="id_gender">gender</label>
-                                <div class="controls">
-                                {{form.gender}}
-                                    </div>
-                            </div>
-                        </fieldset>
+                    <form class="form-horizontal" action="/guys/" method="post">
+                        <table>
+                            {{ form.as_table }}
+                            {% csrf_token %}
+                        </table>
+                        <!--<fieldset>-->
+                            <!--<div class="control-group">-->
+                                <!--<label class="control-label" for="id_name">name</label>-->
+                                <!--<div class="controls">-->
+                                <!--{{form.name}}-->
+                                    <!--</div>-->
+                            <!--</div>-->
+                            <!--<div class="control-group">-->
+                                <!--<label class="control-label" for="id_age">age</label>-->
+                                <!--<div class="controls">-->
+                                <!--{{form.age}}-->
+                                    <!--</div>-->
+                            <!--</div>-->
+                            <!--<div class="control-group">-->
+                                <!--<label class="control-label" for="id_email">email</label>-->
+                                <!--<div class="controls">-->
+                                <!--{{form.email}}-->
+                                    <!--</div>-->
+                            <!--</div>-->
+                            <!--<div class="control-group">-->
+                                <!--<label class="control-label" for="id_phone">phone</label>-->
+                                <!--<div class="controls">-->
+                                <!--{{form.phone}}-->
+                                    <!--</div>-->
+                            <!--</div>-->
+                            <!--<div class="control-group">-->
+                                <!--<label class="control-label" for="id_gender">gender</label>-->
+                                <!--<div class="controls">-->
+                                <!--{{form.gender}}-->
+                                    <!--</div>-->
+                            <!--</div>-->
+                        <!--</fieldset>-->
+
                         <input class="btn btn-primary" type="submit" value="Submit">
                     </form>
                     </div>

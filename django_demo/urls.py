@@ -21,9 +21,6 @@ from guys import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$',http_metric),
     url(r'^guys/newguy/$',views.new_guy),
     url(r'^guys/$',views.guys),
-    url(r'^guys1/newguy/$', views.new_guy1),
-    url(r'^guys1/$', views.guys1),
 ]
