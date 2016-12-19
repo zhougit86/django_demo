@@ -12,7 +12,7 @@ LCTC personal info
         <div class="row">
             <div class="col-md-6 col-md-offset-3 jumbotron">
                 <div class="text-center">
-                    <form class="form-horizontal" action="{% url 'new_guy' %}" method="post">
+                    <form class="form-horizontal" action="{% url 'guys' %}" method="post">
                         <table>
                             {{ form.as_table }}
                             {% csrf_token %}
