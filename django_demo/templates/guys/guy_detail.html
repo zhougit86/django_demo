@@ -9,21 +9,27 @@ LCTC personal info
 <div class="container">
 <div class="col-md-6 col-md-offset-3 jumbotron">
     <table class="table table-striped">
-  <thead>
-    <tr>
-      <th>name</th>
-      <th>age</th>
-      <th>gender</th>
-    </tr>
-  </thead>
   <tbody>
-  {% for guy in guys %}
     <tr>
-      <td><a href="{% url 'view_guy' guy.id %}">{{ guy.name }}</a></td>
+      <td>Name</td>
+      <td>{{ guy.name }}</td>
+    </tr>
+    <tr>
+      <td>Age</td>
       <td>{{ guy.age }}</td>
+    </tr>
+    <tr>
+      <td>Email</td>
+      <td>{{ guy.email }}</td>
+    </tr>
+    <tr>
+      <td>Phone</td>
+      <td>{{ guy.phone }}</td>
+    </tr>
+    <tr>
+      <td>Gender</td>
       <td>{{ guy.gender }}</td>
     </tr>
-  {% endfor %}
   </tbody>
 </table>
 
