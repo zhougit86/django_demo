@@ -20,6 +20,7 @@ LCTC personal info
   {% for guy in guys %}
     <tr>
       <td><a href="{% url 'view_guy' guy.id %}">{{ guy.name }}</a></td>
+      <!--<td><a href="/guys/{{ guy.id }}">{{ guy.name }}</a></td>-->
       <td>{{ guy.age }}</td>
       <td>{{ guy.gender }}</td>
     </tr>
