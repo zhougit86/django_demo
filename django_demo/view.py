@@ -1,6 +1,11 @@
-from django.http import HttpResponse
-from django.template import Template, Context
-from django.template.loader import get_template
-from django.shortcuts import render_to_response
+from django.http import HttpResponse, JsonResponse
+from django.views import View,generic
+import utils as rest_utils
 
+from guys.models import Guy
 
+class Guys(generic.View):
+
+    @rest_utils.ajax()
+    def get(self, request):
+        return [1,2,3]
