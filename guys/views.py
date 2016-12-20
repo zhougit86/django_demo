@@ -18,9 +18,7 @@ class guy_detail(generic.DetailView):
     model = Guy
 
     def get_context_data(self, **kwargs):
-        print kwargs
         context = super(guy_detail,self).get_context_data(**kwargs)
-        # context ['guy'] = Guy.objects.get(kwargs['slug'])
         return context
 
 class guys_view(View):
@@ -38,6 +36,17 @@ class guys_view(View):
     def get(self,request):
         guys_list = self.model.objects.all()
         return render(request, self.template, {'guys': guys_list})
+
+# class guys_view(generic.ListView):
+#     model = Guy
+#
+#     def post(self,request):
+#         form = GuyForm(request.POST)
+#         form.is_valid()
+#         cd = form.cleaned_data
+#         guy = self.model(name=cd['name'], age=cd['age'], email=cd['email'], phone=cd['phone'], gender=cd['gender'])
+#         guy.save()
+#         return redirect("guys")
 
 
 def home_page(request):
