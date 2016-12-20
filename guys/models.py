@@ -10,3 +10,6 @@ class Guy(models.Model):
     gender = models.CharField(max_length=2)
     def __repr__(self):
         return self.name
+
+    def get_absolute_url(self):
+        return "/guys/%i/" % self.id
