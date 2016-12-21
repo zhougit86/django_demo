@@ -106,8 +106,8 @@ def ajax(authenticated=True, data_required=False,
         def _wrapped(self, request, *args, **kw):
             # if authenticated and not request.user.is_authenticated():
             #     return JSONResponse('not logged in', 401)
-            if not request.is_ajax():
-                return JSONResponse('request must be AJAX', 400)
+            # if not request.is_ajax():
+            #     return JSONResponse('request must be AJAX', 400)
 
             # decode the JSON body if present
             request.DATA = None
