@@ -12,3 +12,8 @@ class Guys(generic.View):
     def get(self, request):
         data = serializers.serialize('python',Guy.objects.all())
         return data
+
+    @rest_utils.ajax()
+    def post(self, request):
+        guy = request._body
+        print guy.name

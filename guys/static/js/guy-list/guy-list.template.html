@@ -16,11 +16,25 @@
                 </select>
             </div>
 
-
+            <div class="form-group input">
+                <form novalidate>
+                    <label for="form_name" >Name:</label>
+                    <input id="form_name" class="form-control" ng-model="$ctrl.user.Name" />
+                    <label for="form_phone" >Phone:</label>
+                    <input id="form_phone" class="form-control" ng-model="$ctrl.user.Phone" />
+                    <label for="form_email" >Email:</label>
+                    <input id="form_email" class="form-control" ng-model="$ctrl.user.Email" />
+                    <label for="form_age" >Age:</label>
+                    <input id="form_age" class="form-control" ng-model="$ctrl.user.Age" />
+                    <label for="form_gender" >Gender:</label>
+                    <input id="form_gender" class="form-control" ng-model="$ctrl.user.Gender" />
+                    <button class="btn btn-primary" ng-click="$ctrl.GuyCreate()">Submit</button>
+                    <button class="btn btn-primary" ng-click="$ctrl.Reset()">Reset</button>
+                </form>
+            </div>
 </div>
 
 <div class="col-md-9">
-
     <ul class="guys">
         <li ng-repeat="guy in $ctrl.guys | filter:$ctrl.query | orderBy:$ctrl.orderProp" class="thumbnail">
             <!--<a href="#/phones/{{phone.id}}" class="thumb">-->
@@ -46,8 +60,6 @@
                     </tr>
                 </table>
             </div>
-
-
         </li>
     </ul>
-    </div>
+</div>
