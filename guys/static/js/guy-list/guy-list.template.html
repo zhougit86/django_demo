@@ -1,0 +1,28 @@
+<div class="col-md-3">
+    <!--Sidebar content-->
+
+    <div class="input-group input-group-sm">
+        <label for="query" >Search:</label>
+        <input id="query" class="form-control" ng-model="$ctrl.query" />
+    </div>
+
+
+</div>
+<div class="col-md-9">
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>name</th>
+        <th>age</th>
+        <th>gender</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="guy in $ctrl.guys | filter:$ctrl.query">
+        <td>{{guy.fields.name}}</td>
+        <td>{{guy.fields.age}}</td>
+        <td>{{guy.fields.gender}}</td>
+    </tr>
+    </tbody>
+</table>
+    </div>

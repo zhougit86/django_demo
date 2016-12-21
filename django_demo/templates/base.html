@@ -4,8 +4,10 @@
         <title>LCTC</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="/static/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" media="screen">
-        <link href="/static/base.css" rel="stylesheet" media="screen">
         <script src="/static/bower_components/angular/angular.js"></script>
+        <script src="/static/js/app.module.js"></script>
+        <script src="/static/js/guy-list/guy-list.module.js"></script>
+        <script src="/static/js/guy-list/guy-list.component.js"></script>
     </head>
     <body>
     <div class="col-md-6 col-md-offset-3">
@@ -18,7 +20,7 @@
     </div>
 
 
-        <div ng-app="">
+        <div ng-app="guyApp">
             {% block content %}{% endblock %}
         </div>
     </body>

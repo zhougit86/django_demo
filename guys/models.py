@@ -1,4 +1,5 @@
 from __future__ import unicode_literals
+import datetime
 
 from django.db import models
 
@@ -12,3 +13,4 @@ class Guy(models.Model):
     last_access = models.DateTimeField()
     def __repr__(self):
         return self.name
+
