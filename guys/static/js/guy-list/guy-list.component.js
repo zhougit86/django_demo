@@ -24,17 +24,22 @@ component('guyList', {
         self.orderProp = 'fields.age';
         self.user = {};
 
+        self.load_guys = function(){
+            $http.get('/api/guys/').then(function(response){
+                self.guys= response.data;
+            });
+        }
 
-        $http.get('/api/guys/').then(function(response){
-            self.guys= response.data;
-        });
+        self.load_guys();
 
         self.Reset = function() {
             self.user={};
         };
 
         self.GuyCreate = function() {
-           $http.post('/api/guys/',self.user)
+           $http.post('/api/guys/',self.user).then(
+               self.load_guys()
+           )
         };
     }
 });
