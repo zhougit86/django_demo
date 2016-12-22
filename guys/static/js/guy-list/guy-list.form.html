@@ -1,0 +1,39 @@
+
+
+
+<div style="padding: 30px">
+    <form name="myForm" novalidate>
+        <label for="form_name" >Name:</label>
+        <input id="form_name" name="form_name" class="form-control" ng-model="$ctrl.user.name" required>
+
+        <div>
+                        <span style="color:red" ng-show="myForm.form_name.$touched && myForm.form_name.$invalid">
+                            <span ng-show="myForm.form_name.$error.required">please input a name</span>
+                    </span>
+        </div>
+
+        <label for="form_phone" >Phone:</label>
+        <input id="form_phone" class="form-control" ng-model="$ctrl.user.phone" required>
+
+        <label for="form_email" >Email:</label>
+        <input id="form_email" name="form_email" type="email" class="form-control" ng-model="$ctrl.user.email" required>
+        <div>
+                        <span style="color:red" ng-show="myForm.form_email.$touched && myForm.form_email.$invalid">
+                          <span ng-show="myForm.form_email.$error.required">please input a email</span>
+                          <span ng-show="myForm.form_email.$error.email">invalid email format</span>
+                    </span>
+        </div>
+
+
+        <label for="form_age" >Age:</label>
+        <input id="form_age" class="form-control" ng-model="$ctrl.user.age" required>
+        <label for="form_gender" >Gender:</label>
+        <input id="form_gender" class="form-control" ng-model="$ctrl.user.gender" required>
+        <br><br>
+        <button class="btn btn-primary" ng-click="$ctrl.GuyCreate()" ng-disabled="myForm.form_name.$invalid || myForm.form_email.$invalid">Submit</button>
+        <button class="btn btn-primary" ng-click="$ctrl.Reset()">Reset</button>
+    </form>
+</div>
+
+
+

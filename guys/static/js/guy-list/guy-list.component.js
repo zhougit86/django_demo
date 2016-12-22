@@ -19,7 +19,7 @@ component('guyList', {
 
     templateUrl: '/static/js/guy-list/guy-list.template.html',
 
-    controller: function GuyController($http) {
+    controller: function GuyController($http,$uibModal) {
         var self=this;
         self.orderProp = 'fields.age';
         self.user = {};
@@ -28,8 +28,7 @@ component('guyList', {
             $http.get('/api/guys/').then(function(response){
                 self.guys= response.data;
             });
-        }
-
+        };
         self.load_guys();
 
         self.Reset = function() {
@@ -41,6 +40,21 @@ component('guyList', {
                self.load_guys()
            )
         };
+
+        //self.Open = function() {
+        //    //var modalInstance = $modal.open({
+        //    //    template: '<p>hello</p>'
+        //    //})
+        //    var modalInstance = $uibModal.open({
+        //        templateUrl: '/static/js/guy-list/guy-list.form.html',
+        //        controller:FormCtrl
+        //    });
+        //};
     }
 });
+
+
+
+
+
 

@@ -4,4 +4,5 @@
 
 'use strict';
 
-angular.module('guyList', []);
+angular.module('guyList', ['ui.bootstrap']);
+
