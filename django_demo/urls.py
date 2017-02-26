@@ -22,4 +22,8 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^hello/$',hello),
     url(r'^hello/([a-zA-Z]+)/$',hello),
+    url(r'^pachong/',pachong),
+    url(r'^tongji/',tongji),
+    url(r'^create/',create),
+url(r'^test/',test),
 ]
