@@ -2,6 +2,7 @@
 # -*- coding:utf-8 -*-
 
 import requests
+import time
 from time import sleep
 from bs4 import BeautifulSoup
 from django.http import HttpResponse
@@ -31,6 +32,9 @@ def test(request):
     result = Report_detail.objects.filter(code='600519')
     for i in result:
         html=html +'<br>'+i.code+i.urls+i.facility+i.title+i.date
+        print time.strptime('20'+i.date, '%Y%m%d')
+
+    import matplotlib.pyplot as plt
     return HttpResponse(html)
 
 def create(request):     #check the first X most reported stock
